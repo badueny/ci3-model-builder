@@ -1,0 +1,27 @@
+{
+  "name": "badueny/ci3-model-builder",
+  "description": "Dynamic query builder dan relasi model untuk CodeIgniter 3",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Awenk"
+    }
+  ],
+  "require": {
+    "php": ">=5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "GeneralModel\\": "src/"
+    },
+    "classmap": [
+      "application/models/GeneralModel.php"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.0-dev"
+    }
+  }
+}
