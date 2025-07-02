@@ -56,6 +56,8 @@ Hasil akan memiliki struktur nested seperti:
   },
   ...
 ]
+```
+
 ```php
 $this->GeneralModel->tabel('branches')->withDeepNestedMany([
   'users' => ['users', 'branch_id', 'id'],
