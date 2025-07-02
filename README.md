@@ -110,14 +110,55 @@ Jika `id` sudah ada → data akan di-*update*, bukan insert baru.
 
 **Buat query untuk kebutuhan DataTables otomatis dari request frontend.**
 
+--BackEnd
 ```php
-$this->load->model('GeneralModel');
-$this->GeneralModel->tabel('users')
-    ->whereLikeGroup(['name', 'email'], $this->input->post('search')['value'])
-    ->limit($this->input->post('length'))
-    ->offset($this->input->post('start'))
-    ->orderByRequest($this->input->post('order'), ['name', 'email'])
-    ->get();
+public function datatables()
+{
+    $post = $this->input->post();
+    $keyword = $post['search']['value'] ?? '';
+    $start   = (int) $post['start'];
+    $length  = (int) $post['length'];
+    $order   = $post['order'][0] ?? ['column' => 0, 'dir' => 'asc'];
+    $columns = $post['columns'];
+    $orderCol = $columns[$order['column']]['data'];
+
+    $this->load->model('GeneralModel');
+
+    $model = $this->GeneralModel->tabel('users')
+        ->select('id, name, email, role')
+        ->like_group(['name', 'email', 'role'], $keyword)
+        ->order_by($orderCol, $order['dir']);
+
+    $data  = $model->limit($length, $start)->get();
+    $total = $this->GeneralModel->tabel('users')
+        ->like_group(['name', 'email', 'role'], $keyword)
+        ->count();
+
+    echo json_encode([
+        'draw'            => intval($post['draw']),
+        'recordsTotal'    => $total,
+        'recordsFiltered' => $total,
+        'data'            => $data,
+    ]);
+}
+```
+
+--Frontend JavaScript Jquery Datatables
+```js
+$('#userTable').DataTable({
+  processing: true,
+  serverSide: true,
+  ajax: {
+    url: '/user/datatables',
+    type: 'POST'
+  },
+  columns: [
+    { data: 'id' },
+    { data: 'name' },
+    { data: 'email' },
+    { data: 'role' }
+  ]
+});
 ```
 
 Metode tambahan yang bisa kamu tambahkan:
