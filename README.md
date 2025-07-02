@@ -176,35 +176,6 @@ $('#userTable').DataTable({
   ]
 });
 ```
-
-Metode tambahan yang bisa kamu tambahkan:
-
-```php
-public function whereLikeGroup($fields, $term) {
-  if (!$term || !is_array($fields)) return $this;
-  $this->db->group_start();
-  foreach ($fields as $i => $field) {
-    $i === 0
-      ? $this->db->like($field, $term)
-      : $this->db->or_like($field, $term);
-  }
-  $this->db->group_end();
-  return $this;
-}
-
-public function orderByRequest($orderArray, $columns) {
-  if (!is_array($orderArray)) return $this;
-  foreach ($orderArray as $order) {
-    $colIndex = $order['column'];
-    $dir = $order['dir'];
-    if (isset($columns[$colIndex])) {
-      $this->db->order_by($columns[$colIndex], $dir);
-    }
-  }
-  return $this;
-}
-```
-
 ---
 
 ### 6. Soft Delete, Restore, Force Delete
@@ -314,7 +285,7 @@ $autoload['model'] = array('GeneralModel');
 ```php
 $this->load->model('GeneralModel'); //untuk load manual
 ```
-* tips penggunaan lebih pendek
+* tips penggunaan simple
 ```php
 $DB = $this->GeneralModel;
 $DB->tabel('users')
