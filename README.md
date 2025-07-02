@@ -314,6 +314,15 @@ $autoload['model'] = array('GeneralModel');
 ```php
 $this->load->model('GeneralModel'); //untuk load manual
 ```
+* tips penggunaan lebih pendek
+```php
+$DB = $this->GeneralModel;
+$DB->tabel('users')
+->where('id', 1)
+->update([
+  'email' => 'new@example.com'
+]);
+```
 ---
 ## Saran Gunakan CI3 yang Sudah Di-patch untuk PHP 8
 Kamu bisa pakai:
