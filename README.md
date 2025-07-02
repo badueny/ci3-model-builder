@@ -303,9 +303,6 @@ $this->GeneralModel->tabel('users')->where('id', 1)->delete();
 
 ---
 
-
----
-
 ## 📂 Struktur Rekomendasi CI3
 
 * lokasi model: `application/models/GeneralModel.php`
@@ -318,14 +315,10 @@ $autoload['model'] = array('GeneralModel');
 $this->load->model('GeneralModel'); //untuk load manual
 ```
 ---
-
-## 🚧 Roadmap Berikutnya
-
-* Mode eager join relasi (join langsung bukan nested loop)
-* Global scope untuk default kondisi model
-* Integrasi validation rules (opsional)
-
----
+## Saran Gunakan CI3 yang Sudah Di-patch untuk PHP 8
+Kamu bisa pakai:
+🔗 https://github.com/codeigniter-id/CodeIgniter-3.1.13.
+atau fork resmi yang diperbarui komunitas (misal: kenjis/ci3-to-4-upgrade-helper)
 
 ![CI3](https://img.shields.io/badge/framework-CodeIgniter3-red)
 
