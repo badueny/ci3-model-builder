@@ -5,6 +5,22 @@ Model dinamis gaya Laravel Query Builder untuk CI3, mendukung fitur-fitur komple
 ---
 
 ## ✅ Fitur Utama
+| Fitur                                   | Deskripsi                                             |
+| --------------------------------------- | ----------------------------------------------------- |
+| `withDeepNestedMany()`                  | Relasi one-to-many bertingkat otomatis (nested)       |
+| `transaction()`                         | Transaksi DB otomatis dengan rollback on error        |
+| `increment() / decrement()`             | Tambah/kurangi nilai kolom langsung di DB             |
+| `upsertMany()`                          | Bulk insert dengan ON DUPLICATE KEY UPDATE            |
+| Integrasi DataTables                    | Query builder kompatibel untuk datatables server-side |
+| Soft Delete                             | Nonaktifkan data tanpa hapus fisik                    |
+| `remember()` / `cacheForget()`          | Auto caching query                                    |
+| `paginate()`                            | Pagination otomatis                                   |
+| `count() / sum() / avg()`               | Fungsi agregat bawaan                                 |
+| `likeGroup()`                           | LIKE multiple kolom sekaligus dengan grouping         |
+| `orWhere() / orLike()`                  | Pencarian fleksibel                                   |
+| `whereIn()` / `orHaving()` / `having()` | Kondisi lanjutan untuk query builder                  |
+
+## Contoh Penggunaan
 
 ### 1. withDeepNestedMany()
 
