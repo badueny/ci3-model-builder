@@ -246,6 +246,9 @@ $this->GeneralModel->tabel('users')->where('id', 1)->delete();
 
 ---
 
+
+---
+
 ## 📂 Struktur Rekomendasi CI3
 
 * `application/models/GeneralModel.php`
