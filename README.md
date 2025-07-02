@@ -292,16 +292,15 @@ $this->GeneralModel->tabel('users')->where('id', 1)->delete();
 
 ## 📂 Struktur Rekomendasi CI3
 
-* `application/models/GeneralModel.php`
-* Load otomatis via `autoload.php` atau secara manual di controller:
-
+* lokasi model: `application/models/GeneralModel.php`
+* Load otomatis via `application/config/autoload.php`.
 ```php
-$this->load->model('GeneralModel'); //untuk load manual
-
-/*Autoload : `application/config/autoload.php` */
 $autoload['model'] = array('generalModel');
 ```
-
+* Load secara manual di controller:
+```php
+$this->load->model('GeneralModel'); //untuk load manual
+```
 ---
 
 ## 🚧 Roadmap Berikutnya
