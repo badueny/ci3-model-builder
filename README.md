@@ -326,7 +326,7 @@ $DB->tabel('users')
 ---
 ## Saran Gunakan CI3 yang Sudah Di-patch untuk PHP 8
 Kamu bisa pakai:
-🔗 https://github.com/codeigniter-id/CodeIgniter-3.1.13.
+🔗 [https://github.com/codeigniter-id/CodeIgniter-3.1.13.](https://codeigniter.com/userguide3/installation/downloads.html)
 atau fork resmi yang diperbarui komunitas, misal: [kenjis/ci3-to-4-upgrade-helper](https://github.com/kenjis/ci3-to-4-upgrade-helper)
 
 ![CI3](https://img.shields.io/badge/framework-CodeIgniter3-red)
