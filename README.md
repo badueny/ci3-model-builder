@@ -1,6 +1,6 @@
 # 📘 GeneralModel for CodeIgniter 3
 
-Model dinamis gaya Laravel Query Builder untuk CI3, mendukung fitur-fitur kompleks seperti transaksi, relasi bertingkat, upsert massal, dan lainnya.
+Model dinamis gaya Laravel Query Builder untuk CI3, mendukung fitur-fitur kompleks seperti transaksi, relasi bertingkat, upsert massal, dan lainnya, Compatible `PHP 5.6 s.d 8.0`.
 
 ---
 
@@ -255,7 +255,10 @@ $this->GeneralModel->tabel('users')->where('id', 1)->delete();
 * Load otomatis via `autoload.php` atau secara manual di controller:
 
 ```php
-$this->load->model('GeneralModel');
+$this->load->model('GeneralModel'); //untuk load manual
+
+/*Autoload : `application/config/autoload.php` */
+$autoload['model'] = array('generalModel');
 ```
 
 ---
