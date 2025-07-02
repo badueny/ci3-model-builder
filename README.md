@@ -295,7 +295,7 @@ $this->GeneralModel->tabel('users')->where('id', 1)->delete();
 * lokasi model: `application/models/GeneralModel.php`
 * Load otomatis via `application/config/autoload.php`.
 ```php
-$autoload['model'] = array('generalModel');
+$autoload['model'] = array('GeneralModel');
 ```
 * Load secara manual di controller:
 ```php
