@@ -36,11 +36,9 @@ $this->GeneralModel->tabel('branches')->withDeepNestedMany([
 Contoh skema relasi:
 
 * `branches` memiliki banyak `users`
-* `users` memiliki banyak `orders`
-
 Hasil akan memiliki struktur nested seperti:
 
-````php
+```php
 [
   {
     id: 1,
@@ -58,6 +56,7 @@ Hasil akan memiliki struktur nested seperti:
 ]
 ```
 
+* `users` memiliki banyak `orders`
 ```php
 $this->GeneralModel->tabel('branches')->withDeepNestedMany([
   'users' => ['users', 'branch_id', 'id'],
